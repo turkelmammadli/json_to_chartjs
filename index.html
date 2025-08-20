@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to Chart.js Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>JSON to Chart.js Visualizer</h1>
+        
+        <div class="input-section">
+            <h2>Input JSON</h2>
+            <textarea id="jsonInput" placeholder='Enter Chart.js JSON configuration like:
+{
+  "type": "bar",
+  "data": {
+    "labels": ["January", "February", "March"],
+    "datasets": [{
+      "label": "My Dataset",
+      "data": [10, 20, 30],
+      "backgroundColor": "rgba(75, 192, 192, 0.2)"
+    }]
+  },
+  "options": {
+    "responsive": true,
+    "plugins": {
+      "title": {
+        "display": true,
+        "text": "Chart Title"
+      }
+    }
+  }
+}'></textarea>
+            <div class="button-row">
+                <button id="generateBtn">Generate Chart</button>
+                <button id="clearBtn">Clear</button>
+            </div>
+        </div>
+        
+        <div class="chart-section">
+            <h2>Chart Visualization</h2>
+            <div class="chart-container">
+                <canvas id="chartCanvas"></canvas>
+            </div>
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
